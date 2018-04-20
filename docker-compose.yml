@@ -1,0 +1,17 @@
+version: "3"
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./conf.d/:/etc/nginx/conf.d/
+      - ./keys/:/etc/nginx/keys/
+      - ./html/:/var/www/html/
+#   command: [nginx-debug, '-g', 'daemon off;']
+    command: ["nginx", "-g", "daemon off;"]
+
+
+
+
